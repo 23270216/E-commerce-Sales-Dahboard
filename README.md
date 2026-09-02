@@ -5,8 +5,9 @@ An industry-level, portfolio-ready business intelligence dashboard built in Powe
 ---
 
 ## 🚀 Live Preview 
-*(Replace the image name below with your actual image file name)*
-![Dashboard Preview](04_Power BI/your-screenshot-name.png)
+
+<img width="1226" height="685" alt="dashboard" src="https://github.com/user-attachments/assets/95f19119-b96a-495c-a2fe-37be8f1c1b96" />
+
 
 ---
 
