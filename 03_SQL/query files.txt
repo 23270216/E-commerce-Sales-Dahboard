@@ -1,0 +1,61 @@
+-- 1. Create and use the database
+CREATE DATABASE ecommerce_db;
+USE ecommerce_db;
+
+-- 2. Create the Orders table
+CREATE TABLE Orders (
+    `Order ID` VARCHAR(50) PRIMARY KEY,
+    `Order Date` DATE,
+    `CustomerName` VARCHAR(100),
+    `State` VARCHAR(50),
+    `City` VARCHAR(50)
+);
+
+-- 3. Create the Order Details table
+CREATE TABLE Order_Details (
+    `Order ID` VARCHAR(50),
+    `Amount` INT,
+    `Profit` INT,
+    `Quantity` INT,
+    `Category` VARCHAR(50),
+    `Sub-Category` VARCHAR(50),
+    `State` VARCHAR(50),
+    `City` VARCHAR(50)
+);
+
+-- 4. Create the Sales Targets table
+CREATE TABLE Sales_Targets (
+    `Order_Month` DATE,
+    `Category` VARCHAR(50),
+    `Target` INT
+);
+
+USE ecommerce_db;
+SELECT 
+    Category, 
+    SUM(Target) AS yearly_target
+FROM sales_targets
+GROUP BY Category;
+Select count(*) from sales_targets;
+SHOW tables;
+SELECT COUNT(*) FROM `sales target cleaned v2`;
+DROP TABLE sales_targets;
+
+RENAME TABLE `sales target cleaned v2` TO sales_targets;
+SELECT 
+    Category, 
+    SUM(Target) AS yearly_target
+FROM sales_targets
+GROUP BY Category;
+
+
+
+SELECT 
+    o.CustomerName, 
+    SUM(od.Amount) AS total_spent, 
+    SUM(od.Profit) AS total_profit
+FROM orders o
+JOIN order_details od ON o.`Order ID` = od.`Order ID`
+GROUP BY o.CustomerName
+ORDER BY total_spent DESC
+LIMIT 5;
