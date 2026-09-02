@@ -20,6 +20,7 @@ This project simulates an enterprise-level e-commerce reporting suite. The goal 
 To demonstrate a complete data pipeline, this repository is organized into the following stages:
 * **`01_Raw Data/`**: The original, unstructured e-commerce dataset.
 * **`02_Excel/`**: The transformed dataset after applying data cleaning and formatting procedures.
+* * **`03_SQL/`**: SQL scripts and query results used to extract, join, and aggregate relational tables.
 * **`04_Power BI/`**: Contains the final `.pbix` project file and high-resolution screenshots.
 
 ---
